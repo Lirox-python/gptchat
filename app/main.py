@@ -21,6 +21,7 @@ if st.session_state.get("show_quellen", False):
             - Religionen-entdecken.de <br>
             - Wikipedia <br>
             - Googlemaps <br>
+
         </div>
         """,
         unsafe_allow_html=True
@@ -56,10 +57,12 @@ def zeige_infokasten(bild_url, titel, text, maps_url, quelle):
             <img src="{bild_url}" width="1200" style="border-radius:10px;">
         </div>
         """,
-        unsafe_allow_html=True
+        unsafe_allow_html=True,
+        
     )
     st.subheader(titel)
     st.markdown(f"<h4 style='font-size:1.3em'>{text}</h4>", unsafe_allow_html=True)
+    st.write("Bildquelle:",bild_url)
     st.link_button("📍 Auf Google Maps ansehen", url=maps_url)
     st.markdown("---")
 
